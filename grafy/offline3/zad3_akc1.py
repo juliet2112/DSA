@@ -1,3 +1,6 @@
+#Sprawdanie dla każdej krawędzi
+#O(E^2 + EV)
+
 from zad3testy import runtests
 from collections import deque
 from math import inf
