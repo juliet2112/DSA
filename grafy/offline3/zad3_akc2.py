@@ -35,9 +35,11 @@ def longer( G, s, t ):
     k = t
     while k != s:
         G[p][k] = 0
+        G[k][p] = 0
         dnew = bfs(G,s,t)
         if (dnew > d): return (p,k)
         G[p][k] = 1
+        G[k][p] = 1
         k = p
         p = parent[p]
     
