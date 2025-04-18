@@ -4,13 +4,13 @@ from math import inf
 
 #Za pomocą algorytmu bfs wyznaczam najkrótszą drogę z s do każdego z wierzchołków
 #Sprawdzam jaka jest odległość sąsiadujących z t wierzchołków od s
-#jeżeli d[t] = inf, to połączenie nie istnieje
+#jeżeli d[t]= inf, to połączenie nie istnieje
 #Rozpartuję trzy przypadki:
-#t ma tylko jednego sąsiada: wtedy przechodzę do tego sąsiada (t = G[t][0]) , aby połączenie z wierzchołkiem t nadal istniało i rozpoczynam szukanie dla tego wierzchołka
-#tylko jeden z sąsiadów (i-ty) umożliwia dotarcie do t pokonując najkrótszą drogę (d[i] = d[t]-1), wtedy usuwam krawędź łączącą wierzchołek i-ty z t
-#istnieje kilku (n) sąsiadów umożliwiających dotarcie do t pokonując najkrótszą drogę, wtedy możliwe są dwa przypadki:
-#a) nie da się usunąć krawędzi tak, by wydłużyć drogę (wtedy przechodząc do sąsiada coraz to bliższego s w końcu dotrzemy do s (warunek końcowy s==t))
-#b) istnieje wierzchołek x, taki że każdy spośród n sąsiadów jest z nim połączony i poprzez ten wierzchołek prowadzi najkrótsza droga z s do każdego z n wierzchołków
+#t ma tylko jednego sąsiada: wtedy po usunięciu połączenia d[t] = inf
+#tylko jeden z sąsiadów (i-ty) umożliwia dotarcie do t pokonując najkrótszą drogę (d[i] == d[t]-1), wtedy usuwam krawędź łączącą wierzchołek i-ty z t
+#istnieje kilku (n) sąsiadów umożliwiających dotarcie do t pokonując najkrótszą drogę:
+#wtedy uruchamiam drugiego bfsa, zaczynając od wierzchołka t, do kolejki dodaję jedynie te wierzchołki, dla których d[u] == d[v]-1,
+#Kończę w momencie, gdy w kolejce pozostaje jeden element: jeżeli jest to s, to zwracam None, wpp wykonuje powyższą procedurę dla tego wierzchotka
 
 def bfs(G,s,t,d):
     Q = deque()
