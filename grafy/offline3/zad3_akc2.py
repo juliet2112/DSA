@@ -1,6 +1,7 @@
 from zad3testy import runtests
 from collections import deque
 from math import inf
+
 def na_macierz(G):
     macierz = [[0 for i in range (len(G))] for i in range (len(G))]
     for i in range (len(G)):
