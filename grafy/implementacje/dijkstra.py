@@ -10,18 +10,17 @@ def dijkstra(s,G):
     d[s] = 0
     Q.put((d[s],s))
 
-
     while not Q.empty():
         (dist,v) = Q.get()
         if dist > d[v]:
             continue
 
         visited[v] = True
-        for u in G[v]:
-            if(d[v] + u[1] < d[u[0]]):
-                d[u[0]] = d[v] + u[1]
-                parent[u[0]] = v
-                Q.put((d[u[0]], u[0]))
+        for u,w in G[v]:
+            if(d[v] + w < d[u]):
+                d[u] = d[v] + w
+                parent[u] = v
+                Q.put((d[u], u))
 
     return d
 
