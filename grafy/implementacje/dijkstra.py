@@ -2,7 +2,6 @@ from math import inf
 from queue import PriorityQueue
 
 def dijkstra(s,G):
-    visited = [False for i in range (len(G))]
     d = [inf for i in range (len(G))]
     parent = [None for i in range (len(G))]
     
@@ -15,7 +14,6 @@ def dijkstra(s,G):
         if dist > d[v]:
             continue
 
-        visited[v] = True
         for u,w in G[v]:
             if(d[v] + w < d[u]):
                 d[u] = d[v] + w
