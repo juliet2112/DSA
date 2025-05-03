@@ -4,21 +4,24 @@ from queue import PriorityQueue
 def dijkstra(s,G):
     d = [inf for i in range (len(G))]
     parent = [None for i in range (len(G))]
-    
+    visited = [False for _ in range (len(G))]
     Q = PriorityQueue()
     d[s] = 0
     Q.put((d[s],s))
+
 
     while not Q.empty():
         (dist,v) = Q.get()
         if dist > d[v]:
             continue
-
+        if visited[v] == True:
+                continue
         for u,w in G[v]:
             if(d[v] + w < d[u]):
                 d[u] = d[v] + w
                 parent[u] = v
                 Q.put((d[u], u))
+        visited[v] = True
 
     return d
 
