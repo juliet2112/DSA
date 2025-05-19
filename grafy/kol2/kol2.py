@@ -1,9 +1,7 @@
-# Julia Jamorska
 # szukam odległości z wierzchołka startowego do każdego z resortów
 # oznaczam wierzchołki z resortami jako takie, przez które nie można przejść, jedynie do nich dotrzeć (ozn. -1)
 # gdyż jeśli istniałaby trasa z s do resortu B, przez resort A, to trasa do resortu A będzie krótsza, więc wybiorę zawsze A
 # późniejsze pokonanie tej trasy nie będzie możliwe
-# następnie sortuję odległości od resortów rosnąco i dodaję je
 # O(E + ElogV + VlogV)= O(ElogV)
 
 from kol2testy import runtests
