@@ -2,7 +2,7 @@
 # oznaczam wierzchołki z resortami jako takie, przez które nie można przejść, jedynie do nich dotrzeć (ozn. -1)
 # gdyż jeśli istniałaby trasa z s do resortu B, przez resort A, to trasa do resortu A będzie krótsza, więc wybiorę zawsze A
 # późniejsze pokonanie tej trasy nie będzie możliwe
-# O(E + ElogV + VlogV)= O(ElogV)
+# O(E + ElogV)= O(ElogV)
 
 from kol2testy import runtests
 from queue import PriorityQueue
