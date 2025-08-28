@@ -1,4 +1,4 @@
-#O(m) > O(2E) > O(E + V)
+#O(m)
 #BFS z throttlingiem: z oznaczaniem stanów: tego po jakim torze aktualnie jedzie pociąg
 from egz2btesty import runtests
 from math import inf
