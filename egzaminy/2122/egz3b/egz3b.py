@@ -27,7 +27,9 @@ def maze( L ):
         memo[(i,j,dir)] = wynik
         return wynik
     
-    return max(dp(n-1,n-1,'Up'),dp(n-1,n-1,'Dw'))
+    odp = max(dp(n-1,n-1,'Up'),dp(n-1,n-1,'Dw')) 
+    
+    return odp if odp != -inf else -1
 
 # zmien all_tests na True zeby uruchomic wszystkie testy
 runtests( maze, all_tests = True)
