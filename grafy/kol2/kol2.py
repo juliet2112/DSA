@@ -1,4 +1,3 @@
-# Julia Jamorska
 # szukam odległości z wierzchołka startowego do każdego z resortów
 # oznaczam wierzchołki z resortami jako takie, przez które nie można przejść, jedynie do nich dotrzeć (ozn. -1)
 # gdyż jeśli istniałaby trasa z s do resortu B, przez resort A, to trasa do resortu A będzie krótsza, więc wybiorę zawsze A
