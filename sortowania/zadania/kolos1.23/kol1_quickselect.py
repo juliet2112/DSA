@@ -1,5 +1,7 @@
 from kol1testy import runtests
-
+# wykorzystuję quickselect, by wyznaczyć k-tą wartość dla kolejnych n-p przedziałów długości p
+# dodaję te wartości
+# złożoność czasowa: O((n-p)p) <= O(np), złożoność pamięciowa: O(p) - nowa lista nadpisywana w kolejnych iteracjach
 def partition(A, p, r):
     x = (p + r) // 2
     A[r], A[x] = A[x], A[r]
