@@ -1,3 +1,4 @@
+#O(VElog*E)
 from kol2testy import runtests
 class Node:
     def __init__(self,val):
